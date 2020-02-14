@@ -22,4 +22,20 @@
   "isAdmin": false
 }
 ```
+## Campanhas - Listagem
 
+>Type
+- GET
+>ENDPOINT 
+- {URL}/api/campaigns
+>RESPONSE
+```
+[
+  {
+    "title": "Fanta uva e maçã verde"
+  },
+  {
+    "title": "Pizza quadrada ou redonda"
+  }
+]
+```
