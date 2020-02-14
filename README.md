@@ -2,16 +2,18 @@
 
 ## Login
 
-Type: POST
-ENDPOINT: /users/login
-REQUEST BODY:
+>Type
+- POST
+>ENDPOINT 
+- {URL}/api/users/login
+>REQUEST BODY
 ```
 {
 	"login": "user",
 	"password": "user"
 }
 ```
-RESPONSE:
+>RESPONSE
 ```
 {
   "isLogged": true,
