@@ -28,7 +28,8 @@ router.get('/:campaignId', function (req, res, next) {
   const { campaignId } = req.params;
 
   let result = {};
-  const feedback = {
+  const feedback = (questions) => ([{
+    title: questions[0],
     quantity: 100,
     graphics: [{
       title: 'Por Cidade',
@@ -58,21 +59,53 @@ router.get('/:campaignId', function (req, res, next) {
         quantity: 10
       }]
     }]
-  };
+  }, {
+    title: questions[1],
+    quantity: 50,
+    graphics: [{
+      title: 'Por Cidade',
+      result: [{
+        label: 'Recife',
+        quantity: 15
+      }, {
+        label: 'São Paulo',
+        quantity: 20
+      }, {
+        label: 'Rio de janeiro',
+        quantity: 15
+      }]
+    }, {
+      title: 'Por Idade',
+      result: [{
+        label: 'Até 18 anos',
+        quantity: 5
+      }, {
+        label: '18 à 25 anos',
+        quantity: 30
+      }, {
+        label: '25 à 40 anos',
+        quantity: 10
+      }, {
+        label: 'Acima de 40 anos',
+        quantity: 5
+      }]
+    }]
+  }]);
   
   switch(campaignId) {
+    
     case '1':
       result = {
         title: "Fanta uva e maçã verde",
-        id: 1, 
-        feedback
+        id: 1,
+        feedback: feedback(['Fanta Uva', 'Fanta Maça Verde'])
       };
       break;
     case '2':
       result = {
         title: "Pizza quadrada ou redonda",
         id: 2,
-        feedback
+        feedback: feedback(['Pizza Quadrada', 'Pizza Redonda'])
       };
       break;
   }

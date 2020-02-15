@@ -62,55 +62,102 @@
 >Type
 - GET
 >ENDPOINT 
-- {URL}/api/campaigns/2
+- {URL}/api/campaigns/1
 >RESPONSE
 ```
 {
-  "title": "Pizza quadrada ou redonda",
-  "id": 2,
-  "feedback": {
-    "quantity": 100,
-    "graphics": [
-      {
-        "title": "Por Cidade",
-        "result": [
-          {
-            "label": "Recife",
-            "quantity": 30
-          },
-          {
-            "label": "São Paulo",
-            "quantity": 40
-          },
-          {
-            "label": "Rio de janeiro",
-            "quantity": 30
-          }
-        ]
-      },
-      {
-        "title": "Por Idade",
-        "result": [
-          {
-            "label": "Até 18 anos",
-            "quantity": 5
-          },
-          {
-            "label": "18 à 25 anos",
-            "quantity": 65
-          },
-          {
-            "label": "25 à 40 anos",
-            "quantity": 20
-          },
-          {
-            "label": "Acima de 40 anos",
-            "quantity": 10
-          }
-        ]
-      }
-    ]
-  }
+  "title": "Fanta uva e maçã verde",
+  "id": 1,
+  "feedback": [
+    {
+      "title": "Fanta Uva",
+      "quantity": 100,
+      "graphics": [
+        {
+          "title": "Por Cidade",
+          "result": [
+            {
+              "label": "Recife",
+              "quantity": 30
+            },
+            {
+              "label": "São Paulo",
+              "quantity": 40
+            },
+            {
+              "label": "Rio de janeiro",
+              "quantity": 30
+            }
+          ]
+        },
+        {
+          "title": "Por Idade",
+          "result": [
+            {
+              "label": "Até 18 anos",
+              "quantity": 5
+            },
+            {
+              "label": "18 à 25 anos",
+              "quantity": 65
+            },
+            {
+              "label": "25 à 40 anos",
+              "quantity": 20
+            },
+            {
+              "label": "Acima de 40 anos",
+              "quantity": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Fanta Maça Verde",
+      "quantity": 50,
+      "graphics": [
+        {
+          "title": "Por Cidade",
+          "result": [
+            {
+              "label": "Recife",
+              "quantity": 15
+            },
+            {
+              "label": "São Paulo",
+              "quantity": 20
+            },
+            {
+              "label": "Rio de janeiro",
+              "quantity": 15
+            }
+          ]
+        },
+        {
+          "title": "Por Idade",
+          "result": [
+            {
+              "label": "Até 18 anos",
+              "quantity": 5
+            },
+            {
+              "label": "18 à 25 anos",
+              "quantity": 30
+            },
+            {
+              "label": "25 à 40 anos",
+              "quantity": 10
+            },
+            {
+              "label": "Acima de 40 anos",
+              "quantity": 5
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
 ```
 
