@@ -2,13 +2,24 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function (req, res, next) {
-  let result = [
-    {
-      title: "Fanta uva e maçã verde"
-    }, {
-      title: "Pizza quadrada ou redonda"
-    }
-  ];
+  const { partner } = req.query;
+
+  let result = [];
+
+  switch(partner) {
+    case '1':
+      result.push({
+        title: "Fanta uva e maçã verde",
+        id: 1
+      });
+      break;
+    case '2':
+      result.push({
+        title: "Pizza quadrada ou redonda",
+        id: 2
+      });
+      break;
+  }
 
   res.json(result);
 });
