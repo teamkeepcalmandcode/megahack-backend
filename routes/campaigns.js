@@ -5,6 +5,29 @@ router.get('/', function (req, res, next) {
   const { partner } = req.query;
 
   let result = [];
+  
+  switch(partner) {
+    case '1':
+      result.push({
+        title: "Fanta uva e maçã verde",
+        id: 1
+      });
+      break;
+    case '2':
+      result.push({
+        title: "Pizza quadrada ou redonda",
+        id: 2
+      });
+      break;
+  }
+
+  res.json(result);
+});
+
+router.get('/:campaignId', function (req, res, next) {
+  const { campaignId } = req.params;
+
+  let result = {};
   const feedback = {
     quantity: 100,
     graphics: [{
@@ -36,21 +59,21 @@ router.get('/', function (req, res, next) {
       }]
     }]
   };
-
-  switch(partner) {
+  
+  switch(campaignId) {
     case '1':
-      result.push({
+      result = {
         title: "Fanta uva e maçã verde",
         id: 1, 
         feedback
-      });
+      };
       break;
     case '2':
-      result.push({
+      result = {
         title: "Pizza quadrada ou redonda",
         id: 2,
         feedback
-      });
+      };
       break;
   }
 

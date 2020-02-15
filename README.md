@@ -2,7 +2,7 @@
 
 >URL: **https://limitless-atoll-61000.herokuapp.com**
 
-## Login
+## Login (Login: admin, Password: admin)
 
 >Type
 - POST
@@ -11,31 +11,122 @@
 >REQUEST BODY
 ```
 {
-	"login": "user",
-	"password": "user"
+	"login": "admin",
+	"password": "admin"
 }
 ```
 >RESPONSE
 ```
 {
   "isLogged": true,
-  "isAdmin": false
+  "isAdmin": true
 }
+```
+
+## Parceiros - Listagem
+
+>Type
+- GET
+>ENDPOINT 
+- {URL}/api/partners
+>RESPONSE
+```
+[
+  {
+    "id": 1,
+    "title": "Coca-Cola"
+  },
+  {
+    "id": 2,
+    "title": "Pizza Hut"
+  }
+]
 ```
 ## Campanhas - Listagem
 
 >Type
 - GET
 >ENDPOINT 
-- {URL}/api/campaigns
+- {URL}/api/campaigns?partner=1
 >RESPONSE
 ```
 [
   {
-    "title": "Fanta uva e maçã verde"
-  },
-  {
-    "title": "Pizza quadrada ou redonda"
+    "title": "Fanta uva e maçã verde",
+    "id": 1
   }
 ]
+```
+## Campanhas - Detalhamento
+
+>Type
+- GET
+>ENDPOINT 
+- {URL}/api/campaigns/2
+>RESPONSE
+```
+{
+  "title": "Pizza quadrada ou redonda",
+  "id": 2,
+  "feedback": {
+    "quantity": 100,
+    "graphics": [
+      {
+        "title": "Por Cidade",
+        "result": [
+          {
+            "label": "Recife",
+            "quantity": 30
+          },
+          {
+            "label": "São Paulo",
+            "quantity": 40
+          },
+          {
+            "label": "Rio de janeiro",
+            "quantity": 30
+          }
+        ]
+      },
+      {
+        "title": "Por Idade",
+        "result": [
+          {
+            "label": "Até 18 anos",
+            "quantity": 5
+          },
+          {
+            "label": "18 à 25 anos",
+            "quantity": 65
+          },
+          {
+            "label": "25 à 40 anos",
+            "quantity": 20
+          },
+          {
+            "label": "Acima de 40 anos",
+            "quantity": 10
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+## Usuário - Detalhamento
+
+>Type
+- GET
+>ENDPOINT 
+- {URL}/api/users/3
+>RESPONSE
+```
+{
+  "id": "3",
+  "name": "Barack Obama",
+  "genre": "M",
+  "points": 4500,
+  "level": "Gold"
+}
 ```
