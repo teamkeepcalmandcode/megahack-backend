@@ -17,4 +17,16 @@ router.post('/login', function(req, res, next) {
   res.json(resultLogin);
 });
 
+router.get('/:userId', function (req, res, next) {
+  const { userId } = req.params;
+
+  res.json({
+    id: userId,
+    name: 'Barack Obama',
+    genre: 'M',
+    points: 4500,
+    level: 'Gold'
+  });
+});
+
 module.exports = router;
