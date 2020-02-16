@@ -201,3 +201,46 @@
   "__v": 0
 }
 ```
+
+## Feedback - Relatório da campanha
+
+>Type
+- POST
+>ENDPOINT 
+- {URL}/api/feedbacks/report/{id_campaign}
+>RESPONSE
+```
+{
+  "total": 5,
+  "graphicCity": {
+    "_data": {
+      "♠Não Informado": [
+        "Não Informado",
+        1
+      ],
+      "♠Recife": [
+        "Recife",
+        3
+      ],
+      "♠Garanhuns": [
+        "Garanhuns",
+        1
+      ]
+    },
+    "size": 3
+  },
+  "graphicHour": {
+    "_data": {
+      "22": [
+        22,
+        2
+      ],
+      "23": [
+        23,
+        3
+      ]
+    },
+    "size": 2
+  }
+}
+```

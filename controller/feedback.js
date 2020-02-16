@@ -1,4 +1,5 @@
 const Feedback = require('../models/Feedback');
+var HashMap = require('hashmap');
 
 module.exports = {
     async index(req, res) {
@@ -17,5 +18,32 @@ module.exports = {
         });
 
         return res.json(feedback);
-    }
+    },
+
+    async report(req, res) {
+        const { idCampaign } = req.params;
+        const feedbakcs = await Feedback.find({ idCampaign });
+        let report = {};
+        report.total = feedbakcs.length;
+        var mapCity = new HashMap();
+        var mapHour = new HashMap();
+        let key;
+        feedbakcs.map(item => {
+            key = item.city;
+            if (!mapCity.get(key)) {
+                mapCity.set(key, 1);
+            } else {
+                mapCity.set(key, mapCity.get(key) + 1);
+            }
+            key = item.created_at.getHours();
+            if (!mapHour.get(key)) {
+                mapHour.set(key, 1);
+            } else {
+                mapHour.set(key, mapHour.get(key) + 1);
+            }
+        })
+        report.graphicCity = mapCity;
+        report.graphicHour = mapHour;
+        return res.json(report);
+    },
 };
