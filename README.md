@@ -160,7 +160,6 @@
   ]
 }
 ```
-
 ## Usuário - Detalhamento
 
 >Type
@@ -175,5 +174,30 @@
   "genre": "M",
   "points": 4500,
   "level": "Gold"
+}
+```
+## Feedback - Cadastro (Chamada realizada após Bip no QRCode)
+
+>Type
+- POST
+>ENDPOINT 
+- {URL}/api/feedbacks
+>REQUEST BODY
+```
+{
+	"idCampaign": 2, 
+	"idItemCampaign": 1,
+	"city": "Recife"
+}
+```
+>RESPONSE
+```
+{
+  "city": "Recife",
+  "_id": "5e48a0c8e1d4223bb0bde215",
+  "idCampaign": 2,
+  "idItemCampaign": 1,
+  "created_at": "2020-02-16T01:54:16.939Z",
+  "__v": 0
 }
 ```
