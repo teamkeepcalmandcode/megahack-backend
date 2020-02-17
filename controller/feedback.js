@@ -12,6 +12,8 @@ module.exports = {
     async store(req, res) {
         const { idCampaign, idItemCampaign, city = 'Não Informado' } = req.body;
 
+        if (!isNaN(idCampaign) && !isNaN(idItemCampaign)) return res.json({message: 'Campanha ou escolha inválida'});
+
         await Feedback.create({
             idCampaign,
             idItemCampaign,
