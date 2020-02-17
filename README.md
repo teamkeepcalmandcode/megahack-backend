@@ -106,22 +106,20 @@
 >RESPONSE
 ```
 {
-  "total": 10,
+  "partner": "Coca-Cola",
+  "campaign": "Fanta laranja e guaraná",
+  "total": 4,
   "graphics": [
     {
       "title": "Grágico por Cidade",
       "values": [
         [
           "Não Informado",
-          1
+          2
         ],
         [
           "Recife",
-          6
-        ],
-        [
-          "Garanhuns",
-          3
+          2
         ]
       ]
     },
@@ -130,19 +128,11 @@
       "values": [
         [
           "10H",
-          2
-        ],
-        [
-          "22H",
-          2
-        ],
-        [
-          "23H",
-          2
+          3
         ],
         [
           "9H",
-          4
+          1
         ]
       ]
     }
