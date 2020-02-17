@@ -12,37 +12,41 @@ module.exports = {
     async store(req, res) {
         const { idCampaign, idItemCampaign, city = 'Não Informado' } = req.body;
 
-        if (!isNaN(idCampaign) && !isNaN(idItemCampaign)) return res.json({message: 'Campanha ou escolha inválida'});
-
-        await Feedback.create({
-            idCampaign,
-            idItemCampaign,
-            city
-        }, function (error, result) {
-            if (error) return result.end(error);
-        });
-
-        let result = {
-            partner: constants.PARTNER_1,
-            campaign: constants.CAMPAIGN_1,
-            choice: constants.ITEM_1_CAMPAIGN_1
-        };
+        console.log(isNaN(idCampaign));
+        console.log(isNaN(idItemCampaign));
+        if (isNaN(idCampaign) || isNaN(idItemCampaign)) return res.json({message: 'Campanha ou escolha inválida'});
+            await Feedback.create({
+                idCampaign,
+                idItemCampaign,
+                city
+            }, function (error, result) {
+                if (error) return result.end(error);
+            });
+    
+            let result = {
+                partner: constants.PARTNER_1,
+                campaign: constants.CAMPAIGN_1,
+                choice: constants.ITEM_1_CAMPAIGN_1
+            };
+            
+            switch (idCampaign) {
+                case 1: 
+                    result.choice = constants.ITEM_1_CAMPAIGN_1;
+                    if(idItemCampaign == 2) result.choice = constants.ITEM_2_CAMPAIGN_1;
+                    break;
+                case 2: 
+                    result.partner = constants.PARTNER_2;
+                    result.campaign = constants.CAMPAIGN_2;
+                    result.choice = constants.ITEM_1_CAMPAIGN_2;
+                    if(idItemCampaign == 2) result.choice = constants.ITEM_2_CAMPAIGN_2;
+                    break;
+    
+            }
+    
+            return res.json(result);
         
-        switch (idCampaign) {
-            case 1: 
-                result.choice = constants.ITEM_1_CAMPAIGN_1;
-                if(idItemCampaign == 2) result.choice = constants.ITEM_2_CAMPAIGN_1;
-                break;
-            case 2: 
-                result.partner = constants.PARTNER_2;
-                result.campaign = constants.CAMPAIGN_2;
-                result.choice = constants.ITEM_1_CAMPAIGN_2;
-                if(idItemCampaign == 2) result.choice = constants.ITEM_2_CAMPAIGN_2;
-                break;
 
-        }
-
-        return res.json(result);
+        
     },
 
     async report(req, res) {
