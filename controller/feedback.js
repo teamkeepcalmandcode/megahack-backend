@@ -1,4 +1,5 @@
 const Feedback = require('../models/Feedback');
+const constants = require('../constants');
 var HashMap = require('hashmap');
 
 module.exports = {
@@ -11,7 +12,7 @@ module.exports = {
     async store(req, res) {
         const { idCampaign, idItemCampaign, city = 'Não Informado' } = req.body;
 
-        let feedback = await Feedback.create({
+        await Feedback.create({
             idCampaign,
             idItemCampaign,
             city
@@ -21,13 +22,13 @@ module.exports = {
         });
 
         let result = {
-            partner: 'Coca-Cola',
-            campaign: 'Fanta Uva e Fanta maçã verde'
+            partner: constants.PARTNER_1,
+            campaign: constants.CAMPAIGN_1
         };
 
         if(idCampaign == 2) {
-            result.partner = 'Pizza Hut';
-            result.campaign = 'Pizza Quadrada ou Redonda'
+            result.partner = constants.PARTNER_2;
+            result.campaign = constants.CAMPAIGN_2
         }
 
         return res.json(result);

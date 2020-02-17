@@ -58,109 +58,7 @@
   }
 ]
 ```
-## Campanhas - Detalhamento
 
->Type
-- GET
->ENDPOINT 
-- {URL}/api/campaigns/1
->RESPONSE
-```
-{
-  "title": "Fanta uva e maçã verde",
-  "id": 1,
-  "feedback": [
-    {
-      "title": "Fanta Uva",
-      "quantity": 100,
-      "graphics": [
-        {
-          "title": "Por Cidade",
-          "result": [
-            {
-              "label": "Recife",
-              "quantity": 30
-            },
-            {
-              "label": "São Paulo",
-              "quantity": 40
-            },
-            {
-              "label": "Rio de janeiro",
-              "quantity": 30
-            }
-          ]
-        },
-        {
-          "title": "Por Idade",
-          "result": [
-            {
-              "label": "Até 18 anos",
-              "quantity": 5
-            },
-            {
-              "label": "18 à 25 anos",
-              "quantity": 65
-            },
-            {
-              "label": "25 à 40 anos",
-              "quantity": 20
-            },
-            {
-              "label": "Acima de 40 anos",
-              "quantity": 10
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Fanta Maça Verde",
-      "quantity": 50,
-      "graphics": [
-        {
-          "title": "Por Cidade",
-          "result": [
-            {
-              "label": "Recife",
-              "quantity": 15
-            },
-            {
-              "label": "São Paulo",
-              "quantity": 20
-            },
-            {
-              "label": "Rio de janeiro",
-              "quantity": 15
-            }
-          ]
-        },
-        {
-          "title": "Por Idade",
-          "result": [
-            {
-              "label": "Até 18 anos",
-              "quantity": 5
-            },
-            {
-              "label": "18 à 25 anos",
-              "quantity": 30
-            },
-            {
-              "label": "25 à 40 anos",
-              "quantity": 10
-            },
-            {
-              "label": "Acima de 40 anos",
-              "quantity": 5
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-```
 ## Usuário - Detalhamento
 
 >Type
@@ -194,12 +92,8 @@
 >RESPONSE
 ```
 {
-  "city": "Recife",
-  "_id": "5e48a0c8e1d4223bb0bde215",
-  "idCampaign": 2,
-  "idItemCampaign": 1,
-  "created_at": "2020-02-16T01:54:16.939Z",
-  "__v": 0
+  "partner": "Pizza Hut",
+  "campaign": "Pizza Quadrada ou Redonda"
 }
 ```
 
