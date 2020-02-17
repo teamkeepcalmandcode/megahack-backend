@@ -2,7 +2,7 @@
 
 >URL: **https://limitless-atoll-61000.herokuapp.com**
 
-## Login (Login: admin, Password: admin)
+## Login (Login: coca, Password: coca | Login: pizza, Password: pizza | Login: user, Password: user)
 
 >Type
 - POST
@@ -11,15 +11,16 @@
 >REQUEST BODY
 ```
 {
-	"login": "admin",
-	"password": "admin"
+	"login": "coca",
+	"password": "coca"
 }
 ```
 >RESPONSE
 ```
 {
   "isLogged": true,
-  "isAdmin": true
+  "isAdmin": true,
+  "idPartner": 1
 }
 ```
 
