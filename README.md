@@ -106,36 +106,46 @@
 >RESPONSE
 ```
 {
-  "total": 5,
-  "graphicCity": {
-    "_data": {
-      "♠Não Informado": [
-        "Não Informado",
-        1
-      ],
-      "♠Recife": [
-        "Recife",
-        3
-      ],
-      "♠Garanhuns": [
-        "Garanhuns",
-        1
+  "total": 10,
+  "graphics": [
+    {
+      "title": "Grágico por Cidade",
+      "values": [
+        [
+          "Não Informado",
+          1
+        ],
+        [
+          "Recife",
+          6
+        ],
+        [
+          "Garanhuns",
+          3
+        ]
       ]
     },
-    "size": 3
-  },
-  "graphicHour": {
-    "_data": {
-      "22": [
-        22,
-        2
-      ],
-      "23": [
-        23,
-        3
+    {
+      "title": "Gráfico por Horário",
+      "values": [
+        [
+          "10H",
+          2
+        ],
+        [
+          "22H",
+          2
+        ],
+        [
+          "23H",
+          2
+        ],
+        [
+          "9H",
+          4
+        ]
       ]
-    },
-    "size": 2
-  }
+    }
+  ]
 }
 ```
