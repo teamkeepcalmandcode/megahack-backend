@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const functions = require('firebase-functions');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -13,6 +14,7 @@ var partnersRouter = require('./routes/partners');
 var feedbackRouter = require('./routes/feedback');
 
 var app = express();
+
 
 mongoose.connect('mongodb+srv://root:root123@cluster0-wlw41.mongodb.net/week10?retryWrites=true&w=majority',
     { useNewUrlParser: true, useUnifiedTopology: true }
@@ -51,4 +53,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+
+exports.app = functions.https.onRequest(app);
