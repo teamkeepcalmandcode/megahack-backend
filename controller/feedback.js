@@ -15,9 +15,22 @@ module.exports = {
             idCampaign,
             idItemCampaign,
             city
+        }, function (error, result) 
+        {
+           if(error) return result.end(error);
         });
 
-        return res.json(feedback);
+        let result = {
+            partner: 'Coca-Cola',
+            campaign: 'Fanta Uva e Fanta maçã verde'
+        };
+
+        if(idCampaign == 2) {
+            result.partner = 'Pizza Hut';
+            result.campaign = 'Pizza Quadrada ou Redonda'
+        }
+
+        return res.json(result);
     },
 
     async report(req, res) {
