@@ -22,12 +22,22 @@ module.exports = {
 
         let result = {
             partner: constants.PARTNER_1,
-            campaign: constants.CAMPAIGN_1
+            campaign: constants.CAMPAIGN_1,
+            choice: constants.ITEM_1_CAMPAIGN_1
         };
+        
+        switch (idCampaign) {
+            case 1: 
+                result.choice = constants.ITEM_1_CAMPAIGN_1;
+                if(idItemCampaign == 2) result.choice = constants.ITEM_2_CAMPAIGN_1;
+                break;
+            case 2: 
+                result.partner = constants.PARTNER_2;
+                result.campaign = constants.CAMPAIGN_2;
+                result.choice = constants.ITEM_1_CAMPAIGN_2;
+                if(idItemCampaign == 2) result.choice = constants.ITEM_2_CAMPAIGN_2;
+                break;
 
-        if (idCampaign == 2) {
-            result.partner = constants.PARTNER_2;
-            result.campaign = constants.CAMPAIGN_2
         }
 
         return res.json(result);
