@@ -18,7 +18,7 @@ Basta apenas apontar a câmera ou um leitor de QRCode de um smartphone e escolhe
 
 >Acessar: https://bip-code.netlify.com
 
-Para realizar o login utilize seguintes informações:
+Para realizar o login utilize as seguintes informações:
 | Login	| Password |
 |--|--|
 | coca | coca |
