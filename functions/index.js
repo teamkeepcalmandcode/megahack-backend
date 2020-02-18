@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
-const cors = require('cors');
+const cors = require('cors')({origin: true});
 const functions = require('firebase-functions');
 
 var indexRouter = require('./routes/index');
@@ -15,8 +15,7 @@ var feedbackRouter = require('./routes/feedback');
 
 var app = express();
 
-
-mongoose.connect('mongodb+srv://root:root123@cluster0-wlw41.mongodb.net/week10?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://root:root123@cluster0-wlw41.mongodb.net/week10',
     { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
@@ -25,7 +24,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(logger('dev'));
-app.use(cors());
+app.use(cors);
+app.options('*', cors);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

@@ -1,7 +1,8 @@
 {
   "name": "megahack-backend",
   "version": "0.0.0",
-  "description": "Cloud Functions for Firebase",
+  "private": true,
+  "description": "Backend for Bipcode application",
   "scripts": {
     "serve": "firebase serve --only functions",
     "shell": "firebase functions:shell",
@@ -33,6 +34,5 @@
   },
   "devDependencies": {
     "firebase-functions-test": "^0.1.6"
-  },
-  "private": true
+  }
 }
