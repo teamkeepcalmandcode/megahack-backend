@@ -6,6 +6,9 @@ Para ter a experiência de utilizar nossa plataforma segue as informações nece
 
 >Abra o vídeo simulando propagandas em uma TV 
 >URL: https://www.youtube.com/watch?v=BR8uoFtn_qU
+- **OU** utilize a imagem abaixo como simulação de uma propaganda
+
+![DASHBOARD](img/coca.jpeg)
 
 Basta apenas apontar a câmera ou um leitor de QRCode de um smartphone e escolher o produto que você preferiu. Após isso você será redirecionado para plataforma e sua escolha será registrada.
 
