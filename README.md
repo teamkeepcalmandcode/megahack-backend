@@ -1,141 +1,34 @@
-# Rotas disponibilizadas
+# Bem-Vindo a plataforma Bip Code
 
->URL: **https://limitless-atoll-61000.herokuapp.com**
+Para ter a experiência de utilizar nossa plataforma segue as informações necessárias:
 
-## Login (Login: coca, Password: coca | Login: pizza, Password: pizza | Login: user, Password: user)
+### Passos para reproduzir a visão do telespectador interagindo com a plataforma:
 
->Type
-- POST
->ENDPOINT 
-- {URL}/api/users/login
->REQUEST BODY
-```
-{
-	"login": "coca",
-	"password": "coca"
-}
-```
->RESPONSE
-```
-{
-  "isLogged": true,
-  "isAdmin": true,
-  "idPartner": 1
-}
-```
+>Abra o vídeo simulando propagandas em uma TV 
+>URL: https://www.youtube.com/watch?v=BR8uoFtn_qU
 
-## Parceiros - Listagem
+Basta apenas apontar a câmera ou um leitor de QRCode de um smartphone e escolher o produto que você preferiu. Após isso você será redirecionado para plataforma e sua escolha será registrada.
 
->Type
-- GET
->ENDPOINT 
-- {URL}/api/partners
->RESPONSE
-```
-[
-  {
-    "id": 1,
-    "title": "Coca-Cola"
-  },
-  {
-    "id": 2,
-    "title": "Pizza Hut"
-  }
-]
-```
-## Campanhas - Listagem
+![DASHBOARD](img/dashboard-user.jpeg)
 
->Type
-- GET
->ENDPOINT 
-- {URL}/api/campaigns?partner=1
->RESPONSE
-```
-[
-  {
-    "title": "Fanta uva e maçã verde",
-    "id": 1
-  }
-]
-```
+### Passos para reproduzir a visão de um anunciante interagindo com a plataforma:
 
-## Usuário - Detalhamento
+>Acessar: https://bip-code.netlify.com
 
->Type
-- GET
->ENDPOINT 
-- {URL}/api/users/3
->RESPONSE
-```
-{
-  "id": "3",
-  "name": "Barack Obama",
-  "genre": "M",
-  "points": 4500,
-  "level": "Gold"
-}
-```
-## Feedback - Cadastro (Chamada realizada após Bip no QRCode)
+Realizar o login com as seguintes informações:
+| Login	| Password |
+|--|--|
+| coca | coca |
+| pizza | pizza |
 
->Type
-- POST
->ENDPOINT 
-- {URL}/api/feedbacks
->REQUEST BODY
-```
-{
-	"idCampaign": 2, 
-	"idItemCampaign": 1,
-	"city": "Recife"
-}
-```
->RESPONSE
-```
-{
-  "partner": "Pizza Hut",
-  "campaign": "Pizza Quadrada ou Redonda"
-}
-```
+Será exibido o Dashboard do anuciante com suas campanhas
 
-## Feedback - Relatório da campanha
+![DASHBOARD](img/dashboard-admin.jpeg)
 
->Type
-- POST
->ENDPOINT 
-- {URL}/api/feedbacks/report/{id_campaign}
->RESPONSE
-```
-{
-  "partner": "Coca-Cola",
-  "campaign": "Fanta laranja e guaraná",
-  "total": 4,
-  "graphics": [
-    {
-      "title": "Grágico por Cidade",
-      "values": [
-        [
-          "Não Informado",
-          2
-        ],
-        [
-          "Recife",
-          2
-        ]
-      ]
-    },
-    {
-      "title": "Gráfico por Horário",
-      "values": [
-        [
-          "10H",
-          3
-        ],
-        [
-          "9H",
-          1
-        ]
-      ]
-    }
-  ]
-}
-```
+#### Escolhendo uma campanha será exibido o relatório com as seguintes informações:
+
+- Bip por Cidade
+- Bip por Horas
+
+![DASHBOARD](img/graphics-01.jpeg)
+![DASHBOARD](img/graphics-02.jpeg)
