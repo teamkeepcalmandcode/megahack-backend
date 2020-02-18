@@ -7,6 +7,8 @@ const constants = {
     CAMPAIGN_2: 'Pizza quadrada ou redonda',
     ITEM_1_CAMPAIGN_2: 'Pizza quadrada',
     ITEM_2_CAMPAIGN_2: 'Pizza redonda',
+    LABEL_GRAPHIC_1: 'Gráfico por Cidade',
+    LABEL_GRAPHIC_2: 'Gráfico por Horário'
 }
 
 module.exports = constants;
