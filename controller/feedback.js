@@ -5,15 +5,30 @@ var HashMap = require('hashmap');
 generateMap = (feedbakcs, isCity) => {
     var map = new HashMap();
     let key;
+    let hour;
+    
     feedbakcs.map(item => {
         key = item.city;
-        if(!isCity) key = item.created_at.getHours() + 'H';
+        if(!isCity) {
+            hour = item.created_at.getHours();
+            if (hour < 10) {
+                hour = '0'+ hour;
+            } 
+            key = hour + 'H'
+        };
         if (!map.get(key)) {
             map.set(key, 1);
         } else {
             map.set(key, map.get(key) + 1);
         }
     })
+    if (!isCity) {
+        var mapOrder = new HashMap();
+        map.keys().sort().map(key => {
+            mapOrder.set(key, map.get(key));
+        })
+        return mapOrder.entries()
+    }
     return map.entries();
 }
 
